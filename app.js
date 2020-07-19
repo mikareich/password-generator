@@ -10,6 +10,7 @@ const specialCharactersInput = document.querySelector("#specialCharacters");
 const newPasswordBTN = document.querySelector("#newPassword");
 const copyPasswordBTN = document.querySelector("#copyPassword");
 newPasswordBTN.addEventListener("click", render);
+copyPasswordBTN.addEventListener("click", copy);
 
 // define characters
 const characters = {
@@ -105,6 +106,11 @@ function render() {
   );
 
   passwordInput.value = password;
+}
+
+function copy() {
+  passwordInput.select();
+  document.execCommand("copy");
 }
 
 render();
