@@ -11,7 +11,7 @@ body {
   display: grid;
   justify-content: center;
   background: var(--bg);
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
   color: var(--text);
 }
 
@@ -46,7 +46,6 @@ main {
   padding: 10px 20px;
   outline: none;
   border: 1px solid lightgray;
-  font-family: unset;
   font-size: 11pt;
   border-radius: 3px;
   min-width: 80px;
