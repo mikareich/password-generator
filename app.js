@@ -75,7 +75,6 @@ const characters = {
 };
 
 function createPassword(rules, length) {
-  console.log(length, rules);
   // add different character types based on given preferences
   const usedCharacters = [];
   if (rules.uppercase) usedCharacters.push(...characters.uppercase);
@@ -84,7 +83,7 @@ function createPassword(rules, length) {
   if (rules.specialCharacters) usedCharacters.push(...characters.special);
 
   // create password
-  let password = new Array(length).fill(null).map(function () {
+  let password = new Array(length).fill(undefined).map(function () {
     // return shuffled character
     return usedCharacters[~~(Math.random() * usedCharacters.length)];
   });
@@ -99,12 +98,12 @@ function render() {
   const lowercase = lowercaseInput.checked;
   const numbers = numbersInput.checked;
   const specialCharacters = specialCharactersInput.checked;
-
+  // let password create
   const password = createPassword(
     { uppercase, lowercase, numbers, specialCharacters },
     length
   );
-
+  // display it
   passwordInput.value = password;
 }
 
