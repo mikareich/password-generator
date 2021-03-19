@@ -1,37 +1,20 @@
 {
-  "name": "suggest-password",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "format": "prettier --write \"src/**/*.{ts,js}\"",
+    "lint": "prettier --check \"src/**/*.{ts,js}\""
+  },
   "dependencies": {
-    "css-loader": "^3.6.0",
-    "extract-loader": "^5.1.0",
-    "file-loader": "^6.0.0",
-    "sass-loader": "^9.0.2",
-    "sass": "^1.26.10",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack": "^4.43.0"
+    "canvas-confetti": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "autoprefixer": "^9.8.5",
-    "babel-loader": "^8.1.0",
-    "postcss-loader": "^3.0.0"
-  },
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mikareich/password-generator.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mikareich/password-generator/issues"
-  },
-  "homepage": "https://github.com/mikareich/password-generator#readme"
+    "@snowpack/plugin-typescript": "^1.2.0",
+    "@types/canvas-confetti": "^1.0.0",
+    "@types/snowpack-env": "^2.3.2",
+    "prettier": "^2.0.5",
+    "snowpack": "^3.0.1",
+    "typescript": "^4.0.0"
+  }
 }
