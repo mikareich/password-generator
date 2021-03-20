@@ -40,7 +40,11 @@ function PasswordGenerator() {
   };
 
   const CopyButton = () => (
-    <button type="button" className="underline" onClick={copyPassword}>
+    <button
+      type="button"
+      className="underline truncate max-w-full text-left"
+      onClick={copyPassword}
+    >
       Want to copy password?
     </button>
   );
@@ -63,12 +67,12 @@ function PasswordGenerator() {
   }, [password]);
 
   return (
-    <div className="w-3/4 sm:px-6 sm:py-3 p-4 rounded-md flex gap-4 items-center bg-white shadow-md focus-within:shadow-lg transition-shadow max-w-2xl">
+    <div className="flex items-center gap-4 w-full m-2 sm:w-3/4 sm:px-6 sm:py-3 p-4 rounded-md  bg-white shadow-md focus-within:shadow-lg transition-shadow max-w-2xl">
       <div className="w-24px">{passwordStrength.icon}</div>
-      <div className="mr-auto w-full">
+      <div className="w-full overflow-hidden">
         <input
           autoFocus
-          className="sm:text-xl text-sm font-medium w-full"
+          className="sm:text-xl text-sm font-medium box-border w-full"
           placeholder="Your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
