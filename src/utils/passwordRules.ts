@@ -55,10 +55,10 @@ export const minimumLength: IRule = {
   range: null,
 };
 
-export default {
+export default [
   uppercaseContained,
   lowercaseContained,
   specialCharacterContained,
   numberContained,
   minimumLength,
-};
+];

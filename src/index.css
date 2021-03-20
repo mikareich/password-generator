@@ -6,8 +6,6 @@ html,
 body,
 #root {
   width: 100vw;
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  @apply bg-gray-100;
+  min-height: 100vh;
+  @apply bg-gray-100 flex;
 }
