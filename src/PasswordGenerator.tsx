@@ -7,8 +7,6 @@ import {
 import { passwordRules, generatePassword, testPassword } from "./utils";
 import { IStrength, IRule } from "./types";
 
-const allRules = Object.values(passwordRules);
-
 const allStrengths: IStrength[] = [
   {
     color: "bg-red-500",
@@ -51,7 +49,7 @@ function PasswordGenerator() {
 
   useEffect(() => {
     const currentPassedTests = testPassword(password);
-    const failedTests = allRules.filter(
+    const failedTests = passwordRules.filter(
       (rule) => !currentPassedTests.includes(rule)
     );
     setHelperText(failedTests[0]?.description || <CopyButton />);
