@@ -1,8 +1,8 @@
 import React from "react";
 import PasswordGenerator from "./PasswordGenerator";
 import { passwordRules } from "./utils";
-import { ReactComponent as UndrawImage } from "./undraw_image.svg";
-import { ReactComponent as GithubIcon } from "./github_icon.svg";
+import { ReactComponent as UndrawImage } from "./assets/undraw_image.svg";
+import { ReactComponent as GithubIcon } from "./assets/github_icon.svg";
 
 function App() {
   return (
