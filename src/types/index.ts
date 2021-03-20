@@ -4,7 +4,6 @@ import React from "react";
  * Describes strength of a password
  */
 interface IStrength {
-  description: string;
   color: string;
   icon: React.ReactNode;
 }

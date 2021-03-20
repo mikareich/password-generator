@@ -11,21 +11,18 @@ const allRules = Object.values(passwordRules);
 
 const allStrengths: IStrength[] = [
   {
-    description: "weak",
     color: "red-500",
     icon: (
       <ShieldExclamationOutline className="text-red-500 transition-colors" />
     ),
   },
   {
-    description: "medium",
     color: "yellow-500",
     icon: (
       <ShieldExclamationOutline className="text-yellow-500 transition-colors" />
     ),
   },
   {
-    description: "strong",
     color: "green-500",
     icon: <ShieldCheckOutline className="text-green-500 transition-colors" />,
   },
@@ -59,6 +56,7 @@ function PasswordGenerator() {
       <div className="w-24px">{passwordStrength.icon}</div>
       <div className="mr-auto w-full">
         <input
+          autoFocus
           className="sm:text-xl text-sm font-medium w-full"
           placeholder="Your password"
           value={password}

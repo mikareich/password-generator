@@ -21,5 +21,6 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": ["error"],
     "global-require": "off",
     "no-unused-vars": "warn",
+    "jsx-a11y/no-autofocus": "off",
   },
 };
