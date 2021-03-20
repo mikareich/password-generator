@@ -32,14 +32,26 @@ function PasswordGenerator() {
   const [password, setPassword] = useState(generatePassword());
   const [passwordStrength, setPasswordStrength] = useState(allStrengths[0]);
   const [passedTests, setPassedTests] = useState<IRule[]>([]);
-  const [failedTests, setFailedTests] = useState<IRule[]>([]);
+  const [helperText, setHelperText] = useState<string | React.ReactNode>("");
+
+  const copyPassword = () => {
+    navigator.clipboard.writeText(password);
+    setHelperText("Password copied 👌");
+  };
+
+  const CopyButton = () => (
+    <button type="button" className="underline" onClick={copyPassword}>
+      Want to copy password?
+    </button>
+  );
 
   useEffect(() => {
     const currentPassedTests = testPassword(password);
-    const currentFailedTests = allRules.filter(
+    const failedTests = allRules.filter(
       (rule) => !currentPassedTests.includes(rule)
     );
-    setFailedTests(currentFailedTests);
+    setHelperText(failedTests[0]?.description || <CopyButton />);
+
     setPassedTests(currentPassedTests);
     if (currentPassedTests.length <= 1) {
       setPasswordStrength(allStrengths[0]);
@@ -47,7 +59,6 @@ function PasswordGenerator() {
       setPasswordStrength(allStrengths[1]);
     } else {
       setPasswordStrength(allStrengths[2]);
-      navigator.clipboard.writeText(password);
     }
   }, [password]);
 
@@ -70,7 +81,7 @@ function PasswordGenerator() {
           />
         </div>
         <div className="truncate text-gray-600 text-sm sm:w-full w-28">
-          {failedTests[0]?.description || "Password copied👌"}
+          {helperText}
         </div>
       </div>
       <button
