@@ -11,19 +11,19 @@ const allRules = Object.values(passwordRules);
 
 const allStrengths: IStrength[] = [
   {
-    color: "red-500",
+    color: "bg-red-500",
     icon: (
       <ShieldExclamationOutline className="text-red-500 transition-colors" />
     ),
   },
   {
-    color: "yellow-500",
+    color: "bg-yellow-500",
     icon: (
       <ShieldExclamationOutline className="text-yellow-500 transition-colors" />
     ),
   },
   {
-    color: "green-500",
+    color: "bg-green-500",
     icon: <ShieldCheckOutline className="text-green-500 transition-colors" />,
   },
 ];
@@ -64,7 +64,7 @@ function PasswordGenerator() {
         />
         <div className="mt-2 h-1 bg-gray-300 rounded">
           <div
-            className={`h-1 bg-${passwordStrength.color} w-${passedTests.length}/5 rounded transition-all`}
+            className={`h-1 ${passwordStrength.color} w-${passedTests.length}/5 rounded transition-all`}
           />
         </div>
         <div className="truncate text-gray-600 text-sm sm:w-full w-28">
