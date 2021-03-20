@@ -7,27 +7,27 @@ import {
 import { passwordRules, generatePassword, testPassword } from "./utils";
 import { IStrength, IRule } from "./types";
 
-const iconSize = 24;
-
 const allRules = Object.values(passwordRules);
 
 const allStrengths: IStrength[] = [
   {
     description: "weak",
     color: "red-500",
-    icon: <ShieldExclamationOutline size={iconSize} className="text-red-500" />,
+    icon: (
+      <ShieldExclamationOutline className="text-red-500 transition-colors" />
+    ),
   },
   {
     description: "medium",
     color: "yellow-500",
     icon: (
-      <ShieldExclamationOutline size={iconSize} className="text-yellow-500" />
+      <ShieldExclamationOutline className="text-yellow-500 transition-colors" />
     ),
   },
   {
     description: "strong",
     color: "green-500",
-    icon: <ShieldCheckOutline size={iconSize} className="text-green-500" />,
+    icon: <ShieldCheckOutline className="text-green-500 transition-colors" />,
   },
 ];
 
@@ -50,15 +50,16 @@ function PasswordGenerator() {
       setPasswordStrength(allStrengths[1]);
     } else {
       setPasswordStrength(allStrengths[2]);
+      navigator.clipboard.writeText(password);
     }
   }, [password]);
 
   return (
-    <div className="w-3/4 md:p-6 p-4 rounded-md flex gap-4 items-center bg-white shadow focus-within:shadow-lg transition-shadow">
-      <div className={`width-${iconSize}px`}>{passwordStrength.icon}</div>
-      <div className="min-w-0 w-full overflow-hidden mr-auto">
+    <div className="w-3/4 sm:px-6 sm:py-3 p-4 rounded-md flex gap-4 items-center bg-white shadow-md focus-within:shadow-lg transition-shadow">
+      <div className="w-24px">{passwordStrength.icon}</div>
+      <div className="mr-auto w-full">
         <input
-          className="md:text-xl text-base font-medium mr-auto outline-none box-border w-full"
+          className="sm:text-xl text-sm font-medium w-full"
           placeholder="Your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -68,16 +69,16 @@ function PasswordGenerator() {
             className={`h-1 bg-${passwordStrength.color} w-${passedTests.length}/5 rounded transition-all`}
           />
         </div>
-        <span className="truncate overflow-hidden w-full text-gray-600 text-sm">
-          {failedTests[0]?.description || "A perfect password 🎉🎉🎉"}
-        </span>
+        <div className="truncate text-gray-600 text-sm sm:w-full w-28">
+          {failedTests[0]?.description || "Password copied👌"}
+        </div>
       </div>
       <button
-        className="bg-gray-200 hover:bg-gray-300 rounded p-2"
+        className="bg-gray-200 hover:bg-gray-300 rounded p-2 transition-colors"
         type="button"
         onClick={() => setPassword(generatePassword())}
       >
-        <Refresh size={iconSize} className="text-gray-500" />
+        <Refresh className="text-gray-500" />
       </button>
     </div>
   );
