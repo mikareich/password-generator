@@ -11,12 +11,12 @@ function App() {
       <article className="prose">
         <h2>Password Generator</h2>
         <p className="text-gray-500">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia eius
-          numquam.
+          Check or create a secure password and surf safely through any network.
+          Pay attention to the following rules:
         </p>
         <ul>
           {passwordRules.map((rule) => (
-            <li>{rule.description}</li>
+            <li key={rule.description}>{rule.description}</li>
           ))}
         </ul>
       </article>
