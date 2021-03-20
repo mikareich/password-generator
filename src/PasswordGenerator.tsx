@@ -77,6 +77,7 @@ function PasswordGenerator() {
         className="bg-gray-200 hover:bg-gray-300 rounded p-2 transition-colors"
         type="button"
         onClick={() => setPassword(generatePassword())}
+        aria-label="Refresh"
       >
         <Refresh className="text-gray-500" />
       </button>
