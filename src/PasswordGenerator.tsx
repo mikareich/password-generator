@@ -52,7 +52,7 @@ function PasswordGenerator() {
   }, [password]);
 
   return (
-    <div className="w-3/4 sm:px-6 sm:py-3 p-4 rounded-md flex gap-4 items-center bg-white shadow-md focus-within:shadow-lg transition-shadow">
+    <div className="w-3/4 sm:px-6 sm:py-3 p-4 rounded-md flex gap-4 items-center bg-white shadow-md focus-within:shadow-lg transition-shadow max-w-2xl">
       <div className="w-24px">{passwordStrength.icon}</div>
       <div className="mr-auto w-full">
         <input
