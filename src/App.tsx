@@ -18,7 +18,7 @@ function App() {
         <div className="absolute w-full top-0 left-0 transform -translate-y-2/4 flex justify-center">
           <PasswordGenerator />
         </div>
-        <article className="prose w-2/3">
+        <article className="prose lg:w-2/3">
           <h2>Password Generator</h2>
           <p className="text-gray-500">
             Check or create a secure password and surf safely through any
