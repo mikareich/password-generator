@@ -64,7 +64,9 @@ function PasswordGenerator() {
         />
         <div className="mt-2 h-1 bg-gray-300 rounded">
           <div
-            className={`h-1 ${passwordStrength.color} w-${passedTests.length}/5 rounded transition-all`}
+            className={`h-1 ${
+              passwordStrength.color
+            } ${`w-${passedTests.length}/5`} rounded transition-all`}
           />
         </div>
         <div className="truncate text-gray-600 text-sm sm:w-full w-28">
