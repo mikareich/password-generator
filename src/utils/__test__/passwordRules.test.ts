@@ -27,3 +27,18 @@ test("Test lowecase rule for the following password: 5M;A'EYS10)QK", () => {
 
   expect(containsLowercase).toBe(false);
 });
+
+test("Test special characters rule for the following password: 4Jw)UF^HIJB", () => {
+  const password = "4Jw)UF^HIJB";
+  const containsSpecialCharacters = specialCharacterContained.test(password);
+
+  expect(containsSpecialCharacters).toBe(true);
+});
+
+test("Test special characters rule for the following password: 4JwUFHIJB", () => {
+  const password = "4JwUFHIJB";
+  const containsSpecialCharacters = specialCharacterContained.test(password);
+
+  expect(containsSpecialCharacters).toBe(false);
+});
+
