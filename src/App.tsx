@@ -11,10 +11,7 @@ function App() {
         href="http://github.com/mikareich/"
         className="absolute right-6 top-6 flex gap-2 dark:text-gray-100 items-center"
       >
-        <GithubIcon
-          width={20}
-          className="dark:bg-white rounded-xl w-6 h-6 p-1"
-        />
+        <GithubIcon width={20} />
         Mika Reich
       </a>
       <div className="w-full bg-white dark:bg-gray-600 mt-48 sm:p-12 sm:pt-24 p-6 pt-20 relative ">
