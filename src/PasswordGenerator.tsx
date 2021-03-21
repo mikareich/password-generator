@@ -65,12 +65,12 @@ function PasswordGenerator() {
   }, [password]);
 
   return (
-    <div className="flex items-center gap-4 w-full m-2 sm:w-3/4 sm:px-6 sm:py-3 p-4 rounded-md  bg-white shadow-md focus-within:shadow-lg transition-shadow max-w-2xl">
+    <div className="flex items-center gap-4 w-full m-2 sm:w-3/4 sm:px-6 sm:py-3 p-4 rounded-md  bg-white dark:bg-gray-600 shadow-md focus-within:shadow-lg transition-shadow max-w-2xl">
       <div className="w-24px">{passwordStrength.icon}</div>
       <div className="w-full overflow-hidden">
         <input
           autoFocus
-          className="sm:text-xl text-sm font-medium box-border w-full"
+          className="sm:text-xl text-sm font-medium box-border w-full bg-transparent dark:text-gray-200"
           placeholder="Your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -81,17 +81,17 @@ function PasswordGenerator() {
             style={{ width: `${(passedTests.length / 5 || 1) * 100}%` }}
           />
         </div>
-        <div className="truncate text-gray-600 text-sm w-full">
+        <div className="truncate text-gray-600 dark:text-gray-300 text-sm w-full">
           {helperText}
         </div>
       </div>
       <button
-        className="bg-gray-200 hover:bg-gray-300 rounded p-2 transition-colors"
+        className="bg-gray-200 hover:bg-gray-300 rounded p-2 transition-colors dark:bg-gray-700 dark:hover:bg-gray-500 "
         type="button"
         onClick={() => setPassword(generatePassword())}
         aria-label="Refresh"
       >
-        <Refresh className="text-gray-500" />
+        <Refresh className="text-gray-500 dark:text-gray-300" />
       </button>
     </div>
   );
