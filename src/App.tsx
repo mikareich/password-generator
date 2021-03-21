@@ -14,7 +14,7 @@ function App() {
         <GithubIcon width={20} />
         Mika Reich
       </a>
-      <div className="w-full bg-white mt-48 sm:p-12 sm:pt-24 p-6 pt-20 relative ">
+      <div className="w-full bg-white dark:bg-gray-600 mt-48 sm:p-12 sm:pt-24 p-6 pt-20 relative ">
         <div className="absolute w-full top-0 left-0 transform -translate-y-2/4 flex justify-center">
           <PasswordGenerator />
         </div>

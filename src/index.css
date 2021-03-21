@@ -9,5 +9,5 @@ body,
   min-height: 100%;
   display: flex;
 
-  @apply bg-gray-100;
+  @apply bg-gray-100 dark:bg-gray-700;
 }
