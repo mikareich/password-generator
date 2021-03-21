@@ -1,4 +1,9 @@
-import { lowercaseContained, uppercaseContained } from "../passwordRules";
+import {
+  lowercaseContained,
+  numberContained,
+  specialCharacterContained,
+  uppercaseContained,
+} from "../passwordRules";
 
 test("Test uppercase rule for the following password: d{G5-SH[(<O", () => {
   const password = "d{G5-SH[(<O";
@@ -42,3 +47,16 @@ test("Test special characters rule for the following password: 4JwUFHIJB", () =>
   expect(containsSpecialCharacters).toBe(false);
 });
 
+test("Test number rule for the following password: B:c4O%=HK3?", () => {
+  const password = "B:c4O%=HK3?";
+  const containsNumber = numberContained.test(password);
+
+  expect(containsNumber).toBe(true);
+});
+
+test("Test number rule for the following password: B:cO%=HK?", () => {
+  const password = "B:cO%=HK?";
+  const containsNumber = numberContained.test(password);
+
+  expect(containsNumber).toBe(false);
+});
