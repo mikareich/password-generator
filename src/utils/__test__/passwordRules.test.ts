@@ -1,5 +1,6 @@
 import {
   lowercaseContained,
+  minimumLength,
   numberContained,
   specialCharacterContained,
   uppercaseContained,
@@ -59,4 +60,18 @@ test("Test number rule for the following password: B:cO%=HK?", () => {
   const containsNumber = numberContained.test(password);
 
   expect(containsNumber).toBe(false);
+});
+
+test("Test minimum length rule for the following password: -z7K4}5dCRJ0-pL4", () => {
+  const password = "-z7K4}5dCRJ0-pL4";
+  const minimumLengthReached = minimumLength.test(password);
+
+  expect(minimumLengthReached).toBe(true);
+});
+
+test("Test minimum length rule for the following password: -z7K4}5", () => {
+  const password = "-z7K4}5";
+  const minimumLengthReached = minimumLength.test(password);
+
+  expect(minimumLengthReached).toBe(false);
 });
